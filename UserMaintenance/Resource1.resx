@@ -123,6 +123,9 @@
   <data name="FullName" xml:space="preserve">
     <value>Teljes Nev</value>
   </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Elem torlese</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Fajlba iras</value>
   </data>
