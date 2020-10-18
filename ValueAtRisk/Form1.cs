@@ -12,9 +12,18 @@ namespace ValueAtRisk
 {
     public partial class Form1 : Form
     {
+        PortfolioEntities context = new PortfolioEntities();
+        List<Tick> Ticks;
         public Form1()
         {
+            Ticks = context.Ticks.ToList();
+            dataGridView1.DataSource = Ticks;
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
