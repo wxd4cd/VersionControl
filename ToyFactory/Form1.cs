@@ -17,12 +17,27 @@ namespace ToysFactory
     {
         private List<Toy> _toys = new List<Toy>();
 
-        private IToyFactory _factory;
+        private Toy _nextToy;
 
+        private IToyFactory _factory;
         public IToyFactory Factory
         {
             get { return _factory; }
-            set { _factory = value; }
+            set
+            {
+                _factory = value;
+                DisplayNext();
+            }
+        }
+
+        private void DisplayNext()
+        {
+            if (_nextToy != null)
+                Controls.Remove(_nextToy);
+            _nextToy = Factory.CreateNew();
+            _nextToy.Top = label1.Top + label1.Height + 20;
+            _nextToy.Left = label1.Left;
+            Controls.Add(_nextToy);
         }
 
         public Form1()
@@ -60,6 +75,16 @@ namespace ToysFactory
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Ballbutton_Click(object sender, EventArgs e)
+        {
+            Factory = new BallFactory();
+        }
+
+        private void Carbutton_Click(object sender, EventArgs e)
+        {
+            Factory = new CarFactory();
         }
     }
 }
