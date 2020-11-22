@@ -1,4 +1,5 @@
-﻿using RemoteWebService.MnbServiceReference;
+﻿using RemoteWebService.Entities;
+using RemoteWebService.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,12 @@ namespace RemoteWebService
 {
     public partial class Form1 : Form
     {
+        List<RateData> Rates = new List<RateData>();
         public Form1()
         {
             InitializeComponent();
             FetchExchangeRates();
+            dataGridView1.DataSource = Rates;
         }
         public void FetchExchangeRates()
         {
