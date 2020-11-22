@@ -38,6 +38,9 @@
             this.Carbutton = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.Colorbutton = new System.Windows.Forms.Button();
+            this.Presentbutton = new System.Windows.Forms.Button();
+            this.Boxbutton = new System.Windows.Forms.Button();
+            this.Ribbonbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -80,7 +83,7 @@
             // 
             // Ballbutton
             // 
-            this.Ballbutton.Location = new System.Drawing.Point(90, 8);
+            this.Ballbutton.Location = new System.Drawing.Point(183, 8);
             this.Ballbutton.Name = "Ballbutton";
             this.Ballbutton.Size = new System.Drawing.Size(75, 23);
             this.Ballbutton.TabIndex = 3;
@@ -90,7 +93,7 @@
             // 
             // Carbutton
             // 
-            this.Carbutton.Location = new System.Drawing.Point(183, 8);
+            this.Carbutton.Location = new System.Drawing.Point(90, 8);
             this.Carbutton.Name = "Carbutton";
             this.Carbutton.Size = new System.Drawing.Size(75, 23);
             this.Carbutton.TabIndex = 4;
@@ -107,11 +110,45 @@
             this.Colorbutton.UseVisualStyleBackColor = true;
             this.Colorbutton.Click += new System.EventHandler(this.Colorbutton_Click);
             // 
+            // Presentbutton
+            // 
+            this.Presentbutton.Location = new System.Drawing.Point(372, 8);
+            this.Presentbutton.Name = "Presentbutton";
+            this.Presentbutton.Size = new System.Drawing.Size(75, 23);
+            this.Presentbutton.TabIndex = 6;
+            this.Presentbutton.Text = "PRESENT";
+            this.Presentbutton.UseVisualStyleBackColor = true;
+            // 
+            // Boxbutton
+            // 
+            this.Boxbutton.BackColor = System.Drawing.Color.Red;
+            this.Boxbutton.Location = new System.Drawing.Point(464, 8);
+            this.Boxbutton.Name = "Boxbutton";
+            this.Boxbutton.Size = new System.Drawing.Size(75, 23);
+            this.Boxbutton.TabIndex = 7;
+            this.Boxbutton.Text = "Box";
+            this.Boxbutton.UseVisualStyleBackColor = false;
+            this.Boxbutton.Click += new System.EventHandler(this.Colorbutton_Click);
+            // 
+            // Ribbonbutton
+            // 
+            this.Ribbonbutton.BackColor = System.Drawing.Color.Yellow;
+            this.Ribbonbutton.Location = new System.Drawing.Point(554, 8);
+            this.Ribbonbutton.Name = "Ribbonbutton";
+            this.Ribbonbutton.Size = new System.Drawing.Size(75, 23);
+            this.Ribbonbutton.TabIndex = 8;
+            this.Ribbonbutton.Text = "Ribbon";
+            this.Ribbonbutton.UseVisualStyleBackColor = false;
+            this.Ribbonbutton.Click += new System.EventHandler(this.Colorbutton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 489);
+            this.Controls.Add(this.Ribbonbutton);
+            this.Controls.Add(this.Boxbutton);
+            this.Controls.Add(this.Presentbutton);
             this.Controls.Add(this.Colorbutton);
             this.Controls.Add(this.Carbutton);
             this.Controls.Add(this.Ballbutton);
@@ -136,6 +173,9 @@
         private System.Windows.Forms.Button Carbutton;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button Colorbutton;
+        private System.Windows.Forms.Button Presentbutton;
+        private System.Windows.Forms.Button Boxbutton;
+        private System.Windows.Forms.Button Ribbonbutton;
     }
 }
 
