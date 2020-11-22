@@ -79,12 +79,26 @@ namespace ToysFactory
 
         private void Ballbutton_Click(object sender, EventArgs e)
         {
-            Factory = new BallFactory();
+            Factory = new BallFactory
+            {
+                BallColor = Colorbutton.BackColor
+            };
         }
 
         private void Carbutton_Click(object sender, EventArgs e)
         {
             Factory = new CarFactory();
+        }
+
+        private void Colorbutton_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            var colorPicker = new ColorDialog();
+
+            colorPicker.Color = button.BackColor;
+            if (colorPicker.ShowDialog() != DialogResult.OK)
+                return;
+            button.BackColor = colorPicker.Color;
         }
     }
 }
