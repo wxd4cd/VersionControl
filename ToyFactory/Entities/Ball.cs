@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ToyFactory.Entities
+namespace ToysFactory.Entities
 {
     public class Ball : Label
     {

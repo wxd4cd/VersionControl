@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ToyFactory.Properties
+namespace ToysFactory.Properties
 {
 
 

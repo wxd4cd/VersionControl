@@ -1,4 +1,4 @@
-﻿namespace ToyFactory
+﻿namespace ToysFactory
 {
     partial class Form1
     {

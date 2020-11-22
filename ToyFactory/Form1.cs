@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ToyFactory.Entities;
+using ToysFactory.Entities;
 
-namespace ToyFactory
+namespace ToysFactory
 {
     
     public partial class Form1 : Form

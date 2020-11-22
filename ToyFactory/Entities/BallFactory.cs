@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToyFactory.Entities
+namespace ToysFactory.Entities
 {
     public class BallFactory
     {
