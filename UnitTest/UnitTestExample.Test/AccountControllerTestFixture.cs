@@ -30,9 +30,25 @@ namespace UnitTestExample.Test
 
         }
 
+        [
+            Test,
+            TestCase("nonNuminpwd", false),
+            TestCase("NONSMALLCAPSINTHEPWD2", false),
+            TestCase("noncapitalinthepwd3", false),
+            TestCase("Short23", false),
+            TestCase("GoodPWD42", true)
+        ]
         public void TestValidatePassowrd(string password, bool expectedResult)
         {
-            //
+            // Arrange
+            var accountController = new AccountController();
+
+            // Act
+            var actualResult = accountController.ValidatePassword(password);
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+
         }
     }
 }
