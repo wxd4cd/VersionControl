@@ -17,6 +17,8 @@ namespace MicroSim
         List<Person> Population = new List<Person>();
         List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
         List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
+        Dictionary<decimal, decimal> MalePerYear = new Dictionary<decimal, decimal>();
+        Dictionary<decimal, decimal> FemalePerYear = new Dictionary<decimal, decimal>();
 
         Random rng = new Random(1234);
         decimal EndYear = 2024;
@@ -149,7 +151,17 @@ namespace MicroSim
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
-                richTextBox1.Text += string.Format("Szimulacios Év:{0}\n\tFiúk:{1}\n\tLányok:{2}\n\n", year, nbrOfMales, nbrOfFemales);
+                
+                MalePerYear[year] = nbrOfMales;
+                FemalePerYear[year] = nbrOfFemales;
+            }
+        }
+
+        public void DisplayResults()
+        {
+            for (int year = 2005; year <= EndYear; year++)
+            {
+                richTextBox1.Text += string.Format("Szimulacios Év:{0}\n\tFiúk:{1}\n\tLányok:{2}\n\n", year, MalePerYear[year], FemalePerYear[year]);
             }
         }
 
@@ -167,7 +179,6 @@ namespace MicroSim
             openFileDialog1.RestoreDirectory = true;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Population = GetPopulation(openFileDialog1.FileName);
                 textBox1.Text = openFileDialog1.FileName;
             }
         }
@@ -175,7 +186,11 @@ namespace MicroSim
         private void Startbutton_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
+            Population = GetPopulation(textBox1.Text);
+            MalePerYear.Clear();
+            FemalePerYear.Clear();
             Simulation();
+            DisplayResults();
         }
     }
 }
